@@ -115,7 +115,17 @@ def make_album(artist_name, album_title, songsNb=None):
     return album_artist
 
 
-album_artist = make_album("toto", "mghayar")
-print(album_artist)
-album_artist = make_album("toto", "camelon", 9)
-print(album_artist)
+# album_artist = make_album("toto", "mghayar")
+# print(album_artist)
+# album_artist = make_album("toto", "camelon", 9)
+# print(album_artist)
+
+while True:
+    name = input("enter name: ")
+    if name == "q":
+        break
+    album = input("enter album: ")
+    if album == "q":
+        break
+    album_artist = make_album(name, album)
+    print(album_artist)
