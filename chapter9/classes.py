@@ -53,21 +53,28 @@ class Restaurant:
 # salome.describe_restaurant()
 
 
-# class User:
-#     def __init__(self, first_name, last_name, email, date_of_birth, location):
-#         self.first_name = first_name
-#         self.last_name = last_name
-#         self.email = email
-#         self.date_of_birth = date_of_birth
-#         self.location = location
+class User:
+    def __init__(self, first_name, last_name, email, date_of_birth, location):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.date_of_birth = date_of_birth
+        self.location = location
+        self.login_attempt = 0
 
-#     def describe_user(self):
-#         print(
-#             f"User: {self.first_name+" "+self.last_name} born in {self.date_of_birth} located in {self.location}"
-#         )
+    def describe_user(self):
+        print(
+            f"User: {self.first_name+" "+self.last_name} born in {self.date_of_birth} located in {self.location}"
+        )
 
-#     def greet_user(self):
-#         print(f"Hello, {self.first_name}")
+    def greet_user(self):
+        print(f"Hello, {self.first_name}")
+
+    def increment_login_attempt(self):
+        self.login_attempt += 1
+
+    def reset_login_attempts(self):
+        self.login_attempt = 0
 
 
 # user1 = User("hamid", "smires", "hamid.smires@gg.co", 1990, "lalaland")
@@ -132,11 +139,21 @@ class Restaurant:
 # my_used_car.read_odometer()
 
 
-salome = Restaurant("Salome Marina", "Ocean/Asian")
-salome.describe_restaurant()
-salome.number_served = 2000
-print(salome.number_served)
-salome.set_number_served(3000)
-print(salome.number_served)
-salome.increment_number_served(400)
-print(salome.number_served)
+# salome = Restaurant("Salome Marina", "Ocean/Asian")
+# salome.describe_restaurant()
+# salome.number_served = 2000
+# print(salome.number_served)
+# salome.set_number_served(3000)
+# print(salome.number_served)
+# salome.increment_number_served(400)
+# print(salome.number_served)
+
+user1 = User("hamid", "smires", "hamid.smires@gg.co", 1990, "lalaland")
+user1.increment_login_attempt()
+print(user1.login_attempt)
+user1.increment_login_attempt()
+user1.increment_login_attempt()
+user1.increment_login_attempt()
+print(user1.login_attempt)
+user1.reset_login_attempts()
+print(user1.login_attempt)
