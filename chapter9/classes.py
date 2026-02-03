@@ -25,16 +25,23 @@
 # print(your_dog.name)
 
 
-# class Restaurant:
-#     def __init__(self, restaurant_name, cuisine_type):
-#         self.restaurant_name = restaurant_name
-#         self.cuisine_type = cuisine_type
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
 
-#     def describe_restaurant(self):
-#         print(f"Restaurant {self.restaurant_name} cook's {self.cuisine_type} food ")
+    def describe_restaurant(self):
+        print(f"Restaurant {self.restaurant_name} cook's {self.cuisine_type} food ")
 
-#     def open_restaurant(self):
-#         print(f"{self.restaurant_name} is Open")
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is Open")
+
+    def set_number_served(self, number):
+        self.number_served = number
+
+    def increment_number_served(self, number):
+        self.number_served += number
 
 
 # salome = Restaurant("Salome Marina", "Ocean/Asian")
@@ -75,51 +82,61 @@
 # user3.greet_user()
 
 
-class Car:
-    """A simple attemt to represent a car."""
+# class Car:
+#     """A simple attemt to represent a car."""
 
-    model: str = ""
+#     model: str = ""
 
-    def __init__(self, make, model, year):
-        """Initialize attributes to describe a car."""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0
+#     def __init__(self, make, model, year):
+#         """Initialize attributes to describe a car."""
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer_reading = 0
 
-    def get_descriptive_name(self):
-        """Return a neatly formatted descriptive name."""
-        long_name = f"{self.year} {self.odometer_reading} {self.model}"
-        return long_name.title()
+#     def get_descriptive_name(self):
+#         """Return a neatly formatted descriptive name."""
+#         long_name = f"{self.year} {self.odometer_reading} {self.model}"
+#         return long_name.title()
 
-    def read_odometer(self):
-        """Print a statement showing the car's mileage"""
-        print(f"This car has {self.odometer_reading} miles on it.")
+#     def read_odometer(self):
+#         """Print a statement showing the car's mileage"""
+#         print(f"This car has {self.odometer_reading} miles on it.")
 
-    def set_odometer(self, mileage):
-        """set the odometer reading to the given value."""
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print("You cant roll back on odometer")
+#     def set_odometer(self, mileage):
+#         """set the odometer reading to the given value."""
+#         if mileage >= self.odometer_reading:
+#             self.odometer_reading = mileage
+#         else:
+#             print("You cant roll back on odometer")
 
-    def increment_odometer(self, mileage):
-        self.odometer_reading += mileage
+#     def increment_odometer(self, mileage):
+#         self.odometer_reading += mileage
 
 
-my_new_car = Car("audi", "a4", 2019)
-print(my_new_car.get_descriptive_name())
-my_new_car.read_odometer()
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()
-my_new_car.set_odometer(20)
-my_new_car.read_odometer()
-my_new_car.set_odometer(53)
-my_new_car.read_odometer()
+# my_new_car = Car("audi", "a4", 2019)
+# print(my_new_car.get_descriptive_name())
+# my_new_car.read_odometer()
+# my_new_car.odometer_reading = 23
+# my_new_car.read_odometer()
+# my_new_car.set_odometer(20)
+# my_new_car.read_odometer()
+# my_new_car.set_odometer(53)
+# my_new_car.read_odometer()
 
-my_used_car = Car("subaru", "outback", 2015)
-print(my_used_car.get_descriptive_name())
-my_used_car.set_odometer(23_500)
-my_used_car.read_odometer()
-my_used_car.increment_odometer(100)
-my_used_car.read_odometer()
+# my_used_car = Car("subaru", "outback", 2015)
+# print(my_used_car.get_descriptive_name())
+# my_used_car.set_odometer(23_500)
+# my_used_car.read_odometer()
+# my_used_car.increment_odometer(100)
+# my_used_car.read_odometer()
+
+
+salome = Restaurant("Salome Marina", "Ocean/Asian")
+salome.describe_restaurant()
+salome.number_served = 2000
+print(salome.number_served)
+salome.set_number_served(3000)
+print(salome.number_served)
+salome.increment_number_served(400)
+print(salome.number_served)
