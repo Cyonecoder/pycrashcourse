@@ -64,7 +64,7 @@ class User:
 
     def describe_user(self):
         print(
-            f"User: {self.first_name+" "+self.last_name} born in {self.date_of_birth} located in {self.location}"
+            f"User: {self.first_name} {self.last_name} born in {self.date_of_birth} located in {self.location}"
         )
 
     def greet_user(self):
