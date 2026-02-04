@@ -16,14 +16,25 @@ creamy = IceCreamStand("IbiCream", "Patesserie")
 creamy.display_flavors()
 
 
+class Privileges:
+    def __init__(self, privileges: list = None):
+        if privileges:
+
+            self.privileges = privileges
+        else:
+            self.privileges = ["add post", "can delete post", "can ban user"]
+
+
 class Admin(User):
 
     def __init__(self, first_name, last_name, email, date_of_birth, location):
         super().__init__(first_name, last_name, email, date_of_birth, location)
-        self.privileges = ["add post", "can delete post", "can ban user"]
+        self.privileges = Privileges()
 
     def show_privileges(self):
-        print(f"User {self.first_name} has the privileges :{self.privileges}")
+        print(
+            f"User {self.first_name} has the privileges :{self.privileges.privileges}"
+        )
 
 
 useradmin = Admin("Chams", "Kilowa", "chams@kilo.com", 1999, "tiznit")

@@ -44,6 +44,10 @@ class Battery:
             range = 315
         print(f"This car can go about {range} miles on a full charge.")
 
+    def upgrade_battery(self):
+        if self.battery_size < 100:
+            self.battery_size = 100
+
 
 class ElectricCar(Car):
     def __init__(self, make, model, year):
@@ -57,6 +61,8 @@ class ElectricCar(Car):
 
 my_tesla = ElectricCar("tesla", "Model s", 2019)
 print(my_tesla.get_descriptive_name())
-my_tesla.battery = Battery(100)
+my_tesla.battery = Battery()
 my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+my_tesla.battery.upgrade_battery()
 my_tesla.battery.get_range()
