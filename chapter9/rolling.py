@@ -17,10 +17,18 @@ print("20 sided dice ")
 for d3 in range(20):
     my_dice20.roll_dice()
 
-t = tuple(
-    tuple(k for k in range(1, 11)) + tuple(random.sample(string.ascii_letters, 4))
-)
-print(t)
+ticket = "z"
+x = True
+counter = 0
+while x:
+    t = tuple(
+        tuple(k for k in range(1, 11)) + tuple(random.sample(string.ascii_letters, 4))
+    )
+    print(t)
 
-e1 = random.sample(t, 4)
-print(f"Any element corresponding to {", ".join(map(str,e1))} wins")
+    e1 = random.sample(t, 4)
+    print(f"Any element corresponding to {", ".join(map(str,e1))} wins")
+    counter += 1
+    if ticket in t:
+        print(f"it took {counter} attempts to win")
+        x = False
