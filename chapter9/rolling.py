@@ -22,7 +22,7 @@ x = True
 counter = 0
 while x:
     t = tuple(
-        tuple(k for k in range(1, 11)) + tuple(random.sample(string.ascii_letters, 4))
+        tuple(k for k in range(1, 11)) | tuple(random.sample(string.ascii_letters, 4))
     )
     print(t)
 
