@@ -1,0 +1,10 @@
+we saw  9 chapters untill now 
+chapter 1 is about python instalation 
+chapter 2 is about python variable names types and function
+chapter 3 is about python list and list manipulation
+chapter 4 is about python some datatypes 
+chapter 5 is about python if statements 
+chapter 6 is about python dictionairies
+chapter 7 is about python input function
+chapter 8 is about python functions 
+chapter 9 is about python classes
