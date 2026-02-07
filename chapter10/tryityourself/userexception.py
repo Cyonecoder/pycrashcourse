@@ -1,14 +1,17 @@
-try:
-    num1 = input("\nEnter a number:")
+result = 0
+while True:
+    try:
 
-    num2 = input("\nEnter a number:")
+        num1 = input("\nEnter a number:")
+        if num1 == "q":
+            break
+        num1int = int(num1)
 
-    num1int, num2int = int(num1), int(num2)
-    result = num1int + num2int
+    except:
+        # print("sorry but we cant add them together")
+        pass
 
-except:
-    print("sorry but we cant add them together")
-
-
-else:
-    print(f"addition of {num1int} and {num2int} is {result}")
+    else:
+        resultbefore = result
+        result += num1int
+        print(f"addition of {resultbefore} and {num1} is {result}")
