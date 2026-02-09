@@ -1,0 +1,50 @@
+import json
+
+
+# username = input("Whats your name? ")
+# filename = "username.json"
+# with open(file=filename, mode="w") as f:
+#     json.dump(username, f)
+#     print(f"We will remember you when you comeback,{username}! ")
+
+
+def greet_user():
+    username = get_stored_username()
+    if username:
+        newuser = check_username()
+        print(f"Welcome back, {newuser} ")
+
+    else:
+        username = get_new_username()
+        print(f"We'll remember you when you come back, {username}! ")
+
+
+def get_stored_username():
+    filename = "username.json"
+    try:
+        with open(file=filename) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        return None
+    else:
+        return username
+
+
+def get_new_username():
+    username = input("Whats your name? ")
+    filename = "username.json"
+    with open(file=filename, mode="w") as f:
+        json.dump(username, f)
+    return username
+
+
+def check_username():
+    username = input("Enter your username  for a quick check ")
+    if username == get_stored_username():
+        return username
+    else:
+        username = get_new_username()
+        return username
+
+
+greet_user()
