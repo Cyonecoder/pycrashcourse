@@ -1,4 +1,4 @@
-from users import User, Admin, Privileges
+from chapter9.admin import Admin
 from restaurant import Restaurant
 
 
