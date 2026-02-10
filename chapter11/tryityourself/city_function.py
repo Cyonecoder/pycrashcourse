@@ -1,6 +1,12 @@
-def city_function(city, country):
+def city_function(city, country, population=""):
     """Fuction that return city and name"""
-    city_country_formatted = f"{city.title()}, {country.title()}"
+    if population:
+        city_country_formatted = (
+            f"{city.title()}, {country.title()} - population {str(population)}"
+        )
+    else:
+        city_country_formatted = f"{city.title()}, {country.title()}"
+
     return city_country_formatted
 
 
