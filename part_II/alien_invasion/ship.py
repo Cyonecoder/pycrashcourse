@@ -5,12 +5,14 @@ class Ship:
 
     def __init__(self, ai_game):
         self.screen = ai_game.screen
+        self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
         self.image = pygame.image.load("./ship.bmp")
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
         self.moving_right = False
         self.moving_left = False
+        self.x = float(self.rect.x)
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)
@@ -18,6 +20,7 @@ class Ship:
     def update(self):
         """update ship position based on the movement flag"""
         if self.moving_right:
-            self.rect.x += 3
+            self.x += self.settings.ship_speed
         if self.moving_left:
-            self.rect.x -= 3
+            self.x -= self.settings.ship_speed
+        self.rect.x = self.x
