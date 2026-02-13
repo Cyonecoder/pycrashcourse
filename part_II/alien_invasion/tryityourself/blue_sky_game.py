@@ -18,6 +18,7 @@ class BlueSkyGame:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+
             self.screen.fill(color=(0, 0, 220))
             self.player.blitme()
             pygame.display.flip()
