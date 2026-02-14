@@ -69,8 +69,9 @@ class AlienInvasion:
             self.ship.moving_right = False
 
     def _fire_bullet(self):
-        new_bullet = Bullet(self)
-        self.bullets.add(new_bullet)
+        if len(self.bullets) < self.settings.allowed_bullets:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
 
 
 if __name__ == "__main__":
