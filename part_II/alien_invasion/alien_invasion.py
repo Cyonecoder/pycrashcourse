@@ -26,12 +26,9 @@ class AlienInvasion:
             # Watch for keyboard and mouse event
             self._check_events()
             self.ship.update()
-            self.bullets.update()
+            self._update_bullets()
             # make the most recently drawn screen visible
-            for bullet in self.bullets.copy():
-                if bullet.rect.bottom <= 0:
-                    self.bullets.remove(bullet)
-            print(len(self.bullets))
+
             self._update_screen()
 
     def _check_events(self):
@@ -72,6 +69,14 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.allowed_bullets:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+
+    def _update_bullets(self):
+        # update bullets positions
+        self.bullets.update()
+        # get rid of bullets that have disapeared
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
 
 
 if __name__ == "__main__":
