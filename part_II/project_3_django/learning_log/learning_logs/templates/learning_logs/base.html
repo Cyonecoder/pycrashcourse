@@ -3,7 +3,10 @@
   <a href="{% url 'learning_logs:topics' %}">Topics</a>
 </p>
 {% if user.is_authenticated %} Hello, {{user.username}}
-<a href="{% url 'users:logout' %}">Log out</a>
+<form action="{% url 'users:logout' %}" method="post" style="display: inline">
+  {% csrf_token %}
+  <button type="submit">Log out</button>
+</form>
 {% else %}
 <a href="{% url 'users:login' %}">Log in</a>
 {% endif %} {% block content %} {% endblock content %}
