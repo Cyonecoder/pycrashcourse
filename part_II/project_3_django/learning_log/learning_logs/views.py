@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Topic, Entry
 
 from .forms import TopicForm, EntryForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -11,6 +12,7 @@ def index(request):
     return render(request, "learning_logs/index.html")
 
 
+@login_required
 def topics(request):
     """show all topics"""
 
